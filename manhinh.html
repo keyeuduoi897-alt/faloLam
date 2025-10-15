@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nội thất xe - FALO Auto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<style>/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  color: #111;
+  background: url("images/nen.jpg") center/cover fixed no-repeat;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Topbar */
+.topbar {
+  background: #0b3b5c;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 50px;
+  border-radius: 6px;
+}
+
+.header h1 {
+  font-size: 1.4rem;
+  color: #0b3b5c;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav a {
+  color: #0b3b5c;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ff7a18;
+}
+
+/* Hero */
+.hero {
+  background: url("images/hero.jpg") center/cover no-repeat;
+  height: 80vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.btn {
+  background: #ff7a18;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #e66d15;
+}
+
+/* Section */
+.section {
+  text-align: center;
+  padding: 60px 0;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(3px);
+}
+
+.gray-bg {
+  background: rgba(245, 245, 245, 0.9);
+}
+
+.section h2 {
+  color: #0b3b5c;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.section p {
+  font-size: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Dịch vụ */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.service-box {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 20px;
+  transition: transform 0.3s;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+}
+
+.service-box img {
+  width: 100%;
+  height: 180px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.center-image {
+  max-width: 700px;
+  width: 100%;
+  margin: 20px auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+  background: #0b3b5c;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+  .section {
+    padding: 40px 0;
+  }
+}
+</style>
+  <!-- THANH TRÊN -->
+  <div class="topbar">
+    🚗 FALO AutoLam - Dịch vụ nâng cấp & nội thất ô tô cao cấp
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <img src="images/logo.png" alt="FALO Logo">
+      <h1>FALO AutoLam</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="dichvu.html">Dịch vụ</a></li>
+        <li><a href="lienhe.html">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- DỊCH VỤ -->
+  <section id="dichvu" class="section gray-bg">
+    <div class="container">
+      <h2>Dịch vụ của chúng tôi</h2>
+      <div class="services">
+        <div class="service-box">
+          <img src="images/manhinh1.webp" alt="Màn hình ô tô">
+          <h3>Màn hình Android IPS WIFI RAM 4G ROM 32G</h3>
+          <p>Kết nối wifi vào mạng, Andorid mới nhất, GIÁ SIÊU RẺ</p>
+        </div>
+        <div class="service-box">
+          <img src="images/Man-hinh-android-Carrozzeria-origin.webp" alt="Nội thất xe">
+          <h3>Màn hình android Carrozzeria</h3>
+          <p>Apple CarPlay (có dây/không dây), Android Auto (có dây/không dây), Điều khiển giọng nói (Tiếng Việt), DSP âm thanh, Hỗ trợ camera 360, Camera hành trình, Cảm biến áp suất lốp, Chia đôi màn hình, Cài đặt ứng dụng từ CH Play...</p>
+        </div>
+        <div class="service-box">
+          <img src="images/20250813071148-santafe-android-box-w-+-(1)-origin.webp" alt="Cách âm xe">
+          <h3>Android Box Winca W200+ NEW Xe SantaFe</h3>
+          <p>Nâng tầm trải nghiệm lái xe với Android Box Winca W200+ NEW, giải pháp biến màn hình zin của xe Hyundai SantaFe và nhiều dòng xe khác thành trung tâm giải trí đa phương tiện thông minh. Sản phẩm tích hợp hệ điều hành Android mạnh mẽ, cho phép truy cập vô vàn ứng dụng, dẫn đường chính xác và kết nối ổn định, mang lại sự tiện nghi và hứng khởi trên mọi hành trình.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© 2025 FALO AutoLam - Thiết bị & Dịch vụ ô tô. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

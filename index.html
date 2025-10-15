@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AutoLam</title>
+  <style>
+    /* Reset & basic */
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;
+      line-height:1.5;
+      color:#111;
+      background:#f7f7f8;
+      background-image:url("images/nen.jpg");
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      background-attachment:fixed;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+
+    /* Topbar */
+    .topbar{
+      background:#0b3b5c;
+      color:#fff;
+      padding:8px 16px;
+      font-size:14px;
+      text-align:center;
+    }
+
+    /* Header */
+    .header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:16px 24px;
+      background:#fff;
+      box-shadow:0 2px 6px rgba(0,0,0,0.05);
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+    .logo{display:flex;gap:10px;align-items:center}
+    .logo img{height:50px;border-radius:8px}
+    nav ul{display:flex;gap:18px;list-style:none}
+    .btn{
+      background:#ff7a18;
+      color:#fff;
+      padding:10px 16px;
+      border-radius:8px;
+      transition:0.2s;
+    }
+    .btn:hover{background:#e66d15}
+
+    /* Hero section */
+    .hero{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      padding:60px 24px;
+      background:rgba(255,255,255,0.85);
+      border-radius:16px;
+      margin:40px auto;
+      max-width:1100px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.08);
+    }
+    .hero .copy{
+      flex:1 1 400px;
+      padding:10px 20px;
+    }
+    .hero .copy h1{
+      font-size:36px;
+      margin-bottom:12px;
+      color:#0b3b5c;
+    }
+    .hero .copy p{
+      color:#333;
+      margin-bottom:20px;
+    }
+
+    /* Inventory section */
+    .inventory{
+      padding:40px 24px;
+      max-width:1200px;
+      margin:auto;
+      background:rgba(255,255,255,0.9);
+      border-radius:12px;
+    }
+    .inventory h2{
+      text-align:center;
+      margin-bottom:24px;
+      color:#0b3b5c;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:20px;
+    }
+    .card{
+      background:#fff;
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow:0 6px 16px rgba(0,0,0,0.08);
+      transition:transform 0.2s;
+    }
+    .card:hover{transform:translateY(-4px)}
+    .slideshow{
+      position:relative;
+      width:100%;
+      height:220px;
+    }
+    .slideshow img{
+      position:absolute;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      top:0;
+      left:0;
+      opacity:0;
+      transition:opacity 1s ease-in-out;
+    }
+    .slideshow img.active{opacity:1}
+    .meta{
+      padding:14px 16px;
+    }
+    .meta strong{font-size:16px}
+    .price{color:#0b3b5c;font-weight:700}
+
+    /* Services */
+    .services{
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+      justify-content:center;
+      padding:40px 24px;
+      background:#f3f6fb;
+    }
+    .service{
+      background:#fff;
+      flex:1 1 260px;
+      padding:20px;
+      border-radius:10px;
+      text-align:center;
+      box-shadow:0 4px 12px rgba(0,0,0,0.05);
+    }
+    .service h4{color:#0b3b5c;margin-bottom:8px}
+
+    /* Footer */
+    footer{
+      background:#071428;
+      color:#cfe7ff;
+      padding:40px 24px;
+      margin-top:20px;
+    }
+    footer h3,footer h4{color:#fff;margin-bottom:10px}
+    footer input{
+      padding:8px;
+      margin-bottom:8px;
+      width:100%;
+      border-radius:6px;
+      border:1px solid rgba(255,255,255,0.2);
+      background:#0d2035;
+      color:#fff;
+    }
+    footer .btn{width:100%;text-align:center}
+    footer .footer-cols{
+      display:flex;
+      flex-wrap:wrap;
+      gap:24px;
+      justify-content:space-between;
+    }
+    footer p{font-size:14px;line-height:1.5}
+    footer .copy{
+      text-align:center;
+      margin-top:20px;
+      font-size:13px;
+      color:#9cc3ff;
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+      .header{flex-direction:column;gap:12px}
+      nav ul{flex-wrap:wrap;justify-content:center}
+      .hero{padding:40px 20px;text-align:center}
+      .hero .copy h1{font-size:28px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">Chi nhánh: BHX_HCM_GVA - 111 Lê Đức Thọ &nbsp; | &nbsp; Hotline: 0909 123 456</div>
+
+  <header class="header">
+    <div class="logo">
+      <img src="images/qrcode_262986161_fe429ed992ccf61d59538d160349c76d.png" alt="AutoLam Logo">
+      <div>
+        <div style="font-weight:700">AutoLam</div>
+        <div style="font-size:12px;color:#666">Uy tín - Chất lượng</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <ul>
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="dichvu.html">Dịch vụ</a></li>
+      </ul>
+    </nav>
+
+    <div class="actions">
+      <a class="btn" href="lienhe.html">Liên hệ ngay</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="copy">
+      <h1>mẫu mới về  — tin cậy, giá tốt</h1>
+      <p>phụ kiện nóng hổi , giá mềm, tốt mới </p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+        <a class="btn" href="#inventory">xem ngay</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="inventory" class="inventory">
+    <h2>Mẫu camera hành trình</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="slideshow">
+          <img src="images/shopping.webp" class="active" alt="Insta360 Ace Pro 2 Xplorer Grip Kit">
+          <img src="images/cam12.jpg" alt="Insta360 Ace Pro 2 Xplorer Grip Kit">
+          <img src="images/cam13.jpg" alt="Insta360 Ace Pro 2 Xplorer Grip Kit">
+        </div>
+        <div class="meta">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <strong>Insta360 Ace Pro 2 Xplorer</strong>
+            <div class="price">2,390,000₫</div>
+          </div>
+          <div style="color:#666;font-size:14px;margin-top:8px">
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="slideshow">
+          <img src="images/cam21.jpg" class="active" alt="Honda City 2018">
+          <img src="images/cam22.jpg" alt="Honda City 2018 - khác">
+          <img src="images/cam23.jpg" alt="Honda City 2018 - khác">
+        </div>
+        <div class="meta">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <strong>Camera  70mai A500S (sau)</strong>
+            <div class="price">600,000 ₫</div>
+          </div>
+          <div style="color:#666;font-size:14px;margin-top:8px">
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="slideshow">
+          <img src="images/camm31.png" class="active" alt="Xpander 2020">
+          <img src="images/cam32.png" alt="Xpander 2020 - khác">
+          <img src="images/cam33.png" alt="Xpander 2020 - khác">
+        </div>
+        <div class="meta">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <strong>Camera  Vietmap TS-C9P</strong>
+            <div class="price">1,890,000 ₫ </div>
+          </div>
+          <div style="color:#666;font-size:14px;margin-top:8px">
+
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="service">
+      <h4>Bảo hành & kiểm tra</h4>
+      <p>Kiểm tra kỹ thuật 100 điểm trước khi giao xe.</p>
+    </div>
+    <div class="service">
+      <h4>Mua bán & trao đổi</h4>
+      <p>Hỗ trợ thủ tục sang tên, vay ngân hàng.</p>
+    </div>
+    <div class="service">
+      <h4>Dịch vụ sau bán</h4>
+      <p>Bảo dưỡng, sửa chữa chính hãng.</p>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="footer-cols">
+      <div>
+        <h3>TruongSu Auto</h3>
+        <p>Địa chỉ: 111 Lê Đức Thọ, Phường XYZ, Quận ABC, TP. Hồ Chí Minh</p>
+        <p>Hotline: 0909 123 456</p>
+      </div>
+      <div>
+        <h4>Giờ mở cửa</h4>
+        <p>Thứ 2 - Thứ 7: 8:00 - 18:00</p>
+      </div>
+      <div>
+        <h4>Gửi lời nhắn</h4>
+        <form>
+          <input placeholder="Họ tên">
+          <input placeholder="Số điện thoại">
+          <button class="btn" type="button">Gửi</button>
+        </form>
+      </div>
+    </div>
+    <div class="copy">© 2025 TruongSu Auto — Mẫu demo. Thay ảnh ở folder images/ và chỉnh nội dung theo ý bạn.</div>
+  </footer>
+
+  <!-- Script slideshow tự động -->
+  <script>
+    document.querySelectorAll('.slideshow').forEach(slideshow => {
+      const imgs = slideshow.querySelectorAll('img');
+      let i = 0;
+      setInterval(() => {
+        imgs[i].classList.remove('active');
+        i = (i + 1) % imgs.length;
+        imgs[i].classList.add('active');
+      }, 3000);
+    });
+  </script>
+</body>
+</html>

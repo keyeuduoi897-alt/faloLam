@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liên hệ - AutoLam</title>
+  <style>
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: #f7f8fa;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+      height: 100%;
+    }
+
+    .contact-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      background: #fff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    /* ảnh to bằng nhau */
+    .contact-box img {
+      width: 90%;
+      height: 400px; /* chiều cao cố định, giúp 2 ảnh bằng nhau */
+      border-radius: 12px;
+      margin-bottom: 20px;
+      object-fit: cover; /* đảm bảo ảnh không méo */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .contact-box a {
+      background: #0b3b5c;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .contact-box a:hover {
+      background: #ff7a18;
+    }
+
+    .left {
+      background: linear-gradient(to bottom right, #e3f2fd, #bbdefb);
+    }
+
+    .right {
+      background: linear-gradient(to bottom right, #fff8e1, #fff3cd);
+    }
+
+    @media (max-width: 900px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+      .contact-box {
+        padding: 30px 20px;
+      }
+      .contact-box img {
+        height: 300px; /* giảm chiều cao ảnh khi trên mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-container">
+    <!-- Khung Facebook -->
+    <div class="contact-box left">
+      <h2>Kết nối qua Facebook</h2>
+      <img src="images/fb.png" alt="Facebook">
+      <a href="https://www.facebook.com/xuan.lam.falu?locale=vi_VN" target="_blank">Truy cập Facebook</a>
+    </div>
+
+    <!-- Khung Zalo -->
+    <div class="contact-box right">
+      <h2>Liên hệ qua Zalo</h2>
+      <img src="images/Screenshot 2025-10-15 231158.png " alt="Mã QR Zalo">
+      <p>nhắn tin trực tiếp với chúng tôi - 0966.246.567</p>
+    </div>
+  </div>
+
+</body>
+</html>
